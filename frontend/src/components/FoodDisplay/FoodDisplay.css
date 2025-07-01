@@ -1,0 +1,89 @@
+:root {
+  --background-color: #f5f3ff;
+  --primary-color: #4a148c;
+  --secondary-color: #000000;
+  --accent-color: #ff4081;
+  --text-color: #1a237e;
+}
+
+.food-display {
+  padding: 40px;
+  background: var(--background-color);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.food-display h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  column-gap: 16px;
+  row-gap: 30px;
+  margin-top: 10px;
+  justify-items: center;
+}
+
+/* Tablet screens: 3 columns */
+@media (max-width: 900px) {
+  .food-display-list {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+  }
+}
+
+/* Small tablets and large phones: 2 columns */
+@media (max-width: 650px) {
+  .food-display {
+    padding: 24px 10px;
+    gap: 16px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+  .food-display h1 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+}
+
+/* Phones: 2 columns down to 420px */
+@media (max-width: 420px) {
+  .food-display {
+  
+    gap: 10px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Ensures items don't overflow */
+    column-gap: 8px;
+    row-gap: 16px;
+    margin-top: 6px;
+  }
+  .food-display h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  /* This targets the FoodItem boxes if they have a class or are direct children */
+  .food-display-list > * {
+    max-width: 160px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the box */
+  }
+}
+
+
+/* Ultra-narrow screens: 1 column only below 350px */
+@media (max-width: 350px) {
+  .food-display-list {
+    grid-template-columns: 1fr;
+  }
+}

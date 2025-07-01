@@ -1,0 +1,100 @@
+:root {
+  --background-color: #f5f3ff;
+  --primary-color: #4a148c;
+  --secondary-color: #000000;
+  --accent-color: #ff4081;
+  --text-color: #1a237e;
+}
+
+.restaurant-menu-container {
+  padding: 30px 15px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: var(--background-color);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeSlide 0.3s ease-in-out;
+}
+
+.restaurant-menu-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.no-items-text {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Smooth appear animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Responsive Styles ========== */
+
+@media (max-width: 900px) {
+  .restaurant-menu-container {
+    padding: 24px 12px;
+  }
+  .restaurant-menu-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .restaurant-menu-container {
+    padding: 20px 10px;
+  }
+  .restaurant-menu-title {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .restaurant-menu-container {
+    padding: 16px 8px;
+  }
+  .restaurant-menu-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    padding: 0 4px;
+  }
+  .no-items-text {
+    font-size: 0.9rem;
+    margin-top: 16px;
+  }
+}

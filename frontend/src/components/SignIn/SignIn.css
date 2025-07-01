@@ -1,0 +1,194 @@
+:root {
+  --background-color: #f5f3ff;
+  --primary-color: #4a148c;
+  --secondary-color: #000000;
+  --accent-color: #ff4081;
+  --text-color: #1a237e;
+}
+
+.signin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 47, 83, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.signin-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin: 0 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.signin-modal h2 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.signin-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signin-modal input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.signin-modal input:focus {
+  border-color: var(--accent-color);
+}
+
+.signin-modal button {
+  padding: 12px 15px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signin-modal button:hover {
+  background: var(--accent-color);
+}
+
+.success-message {
+  margin-bottom: 15px;
+  color: green;
+  font-weight: 500;
+}
+
+.forgot-password,
+.toggle-text {
+  margin-top: 15px;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.forgot-password:hover,
+.toggle-text span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.toggle-text span {
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.logged-in-message {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logged-in-message h3 {
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.logged-in-message button {
+  padding: 12px 15px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logged-in-message button:hover {
+  background: var(--accent-color);
+}
+
+/* ----------- Responsive Styles ----------- */
+
+@media (max-width: 650px) {
+  .signin-modal {
+    padding: 32px 24px;
+    max-width: 340px;
+  }
+  .signin-modal h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .signin-modal form {
+    gap: 12px;
+  }
+  .signin-modal input,
+  .signin-modal button {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+  .logged-in-message h3 {
+    font-size: 20px;
+  }
+  .logged-in-message button {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .signin-modal {
+    padding: 24px 16px;
+    max-width: 300px;
+    margin: 0 8px;
+  }
+  .signin-modal h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .signin-modal form {
+    gap: 10px;
+  }
+  .signin-modal input,
+  .signin-modal button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .forgot-password,
+  .toggle-text {
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .logged-in-message h3 {
+    font-size: 18px;
+  }
+  .logged-in-message button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}

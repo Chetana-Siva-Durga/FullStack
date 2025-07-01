@@ -1,0 +1,129 @@
+:root {
+  --background-color: #f5f3ff;
+  --primary-color: #4a148c;
+  --secondary-color: #000000;
+  --accent-color: #ff4081;
+  --text-color: #1a237e;
+}
+
+.about-section {
+  width: 100%;
+  background-color: var(--background-color);
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  color: var(--text-color);
+}
+
+.about-title {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+  border-bottom: 3px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.about-points {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.about-points li {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.about-points li b {
+  color: var(--accent-color);
+  margin-left: 6px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(74, 20, 140, 0.2);
+  object-fit: cover;
+}
+
+/* Responsive for tablets and small desktops */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-text {
+    flex: 1 1 100%;
+  }
+}
+
+/* Responsive for large mobile screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-points li {
+    font-size: 1.05rem;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive for very small mobile screens */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  .about-title {
+    font-size: 1.8rem;
+  }
+  .about-points li {
+    font-size: 1rem;
+  }
+  .about-description {
+    font-size: 0.95rem;
+  }
+  .about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(74, 20, 140, 0.15);
+  }
+}

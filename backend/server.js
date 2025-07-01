@@ -1,5 +1,4 @@
 import express from 'express';
-import Stripe from 'stripe';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import path from 'path';
@@ -26,7 +25,7 @@ const requestLogger = (req, res, next) => {
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(requestLogger); // ✅ Use the defined logger
+app.use(requestLogger);
 app.use('/images', express.static(path.join(__dirname, '/uploads')));
 
 // Import routes
@@ -35,7 +34,6 @@ import foodRoutes from './routes/foodRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import addressRoutes from './routes/addressRoutes.js';
-import paymentRoutes from './routes/paymentRoutes.js';
 
 // Route middlewares
 app.use('/api/auth', authRoutes);
@@ -43,7 +41,6 @@ app.use('/api/food', foodRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/address', addressRoutes);
-app.use('/api', paymentRoutes); // Stripe routes under /api
 
 // Root route
 app.get('/', (req, res) => res.send('✅ API is running...'));
@@ -72,3 +69,7 @@ app.use((err, req, res, next) => {
     process.exit(1);
   }
 })();
+
+
+
+

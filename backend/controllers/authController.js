@@ -24,8 +24,15 @@ export const register = async (req, res) => {
       password: hashedPassword,
     });
 
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: '1d' }
+    );
+
     res.status(201).json({
       message: 'Account created successfully.',
+      token,
       user: { id: user._id, username: user.username, email: user.email },
     });
   } catch (err) {
@@ -83,7 +90,7 @@ export const forgotPassword = async (req, res) => {
 
     const resetCode = crypto.randomInt(100000, 999999).toString();
     user.resetCode = resetCode;
-    user.resetCodeExpires = Date.now() + 15 * 60 * 1000; // 15 min
+    user.resetCodeExpires = Date.now() + 15 * 60 * 1000; // 15 minutes
     await user.save();
 
     const transporter = nodemailer.createTransport({
@@ -110,7 +117,7 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-// VERIFY RESET CODE: Confirm code correctness
+// VERIFY RESET CODE: Confirm correctness
 export const verifyResetCode = async (req, res) => {
   const { identifier, code } = req.body;
   try {
@@ -129,7 +136,7 @@ export const verifyResetCode = async (req, res) => {
   }
 };
 
-// RESET PASSWORD: Update password after successful verification
+// RESET PASSWORD: Update after verification
 export const resetPassword = async (req, res) => {
   const { identifier, newPassword } = req.body;
   try {

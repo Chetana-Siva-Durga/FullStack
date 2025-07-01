@@ -9,10 +9,10 @@ import {
 
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
-router.post('/forgot-password', forgotPassword);
-router.post('/verify-reset-code', verifyResetCode); // ✅ new route
-router.post('/reset-password', resetPassword);
+router.post('/register', register);            // POST /api/auth/register
+router.post('/login', login);                  // POST /api/auth/login
+router.post('/forgot-password', forgotPassword);      // POST /api/auth/forgot-password
+router.post('/verify-reset-code', verifyResetCode);   // POST /api/auth/verify-reset-code
+router.post('/reset-password', resetPassword);        // POST /api/auth/reset-password
 
 export default router;
