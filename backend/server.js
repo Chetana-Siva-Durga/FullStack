@@ -45,6 +45,8 @@ app.use('/api/address', addressRoutes);
 // Root route
 app.get('/', (req, res) => res.send('✅ API is running...'));
 
+
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 // 404 handler for unmatched routes
 app.use((req, res) => {
   console.error(`❌ Route not found: ${req.method} ${req.url}`);
