@@ -8,7 +8,8 @@ import Orders from './screens/Orders/Orders'
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 
-const url ='http://localhost:5000';
+const url = import.meta.env.VITE_API_URL;
+
 const App = () => {
   return (
     <div className='app'>
