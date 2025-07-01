@@ -10,10 +10,7 @@ const Sidebar = () => {
           <span className="sidebar-icon" role="img" aria-label="Add">➕</span>
           <p>Add Items</p>
         </NavLink>
-        <NavLink to='/list' className="sidebar-option">
-          <span className="sidebar-icon" role="img" aria-label="List">📋</span>
-          <p>List Items</p>
-        </NavLink>
+        
         <NavLink to='/orders' className="sidebar-option">
           <span className="sidebar-icon" role="img" aria-label="Orders">🧾</span>
           <p>Orders</p>
